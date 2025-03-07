@@ -1,0 +1,29 @@
+<?php
+include "connection.php"; // Connexion à la base de données
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST["nom"] ?? "";
+    $email = $_POST["email"] ?? "";
+    $telephone = $_POST["telephone"] ?? "";
+
+    if (!empty($nom) && !empty($email) && !empty($telephone)) {
+        try {
+            $sql = "INSERT INTO livreurs (nom, email, telephone, statut, note) VALUES (:nom, :email, :telephone, 'En attente', NULL)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":nom", $nom);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":telephone", $telephone);
+            
+            if ($stmt->execute()) {
+                echo "Livreur ajouté avec succès !";
+            } else {
+                echo "Erreur lors de l'ajout.";
+            }
+        } catch (PDOException $e) {
+            echo "Erreur SQL : " . $e->getMessage();
+        }
+    } else {
+        echo "Veuillez remplir tous les champs.";
+    }
+}
+?>
