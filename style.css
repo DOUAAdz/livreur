@@ -1,0 +1,124 @@
+/* 🌟 Image de fond */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('big.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white; /* Texte blanc pour lisibilité */
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ Conteneur principal avec fond semi-transparent */
+.container {
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.7); /* Noir transparent pour lisibilité */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ✅ Titre */
+h2 {
+    font-weight: bold;
+    color: #FFD700; /* Couleur or */
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease-in-out;
+}
+
+/* ✅ Tableau avec fond clair */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent blanc */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ✅ En-tête du tableau */
+.table thead {
+    background-color: #FF8C00 !important; /* Orange foncé à la place du bleu */
+    color: white;
+}
+
+/* ✅ Cellules du tableau */
+.table td, .table th {
+    padding: 12px;
+    text-align: center;
+}
+
+/* ✅ Effet au survol */
+.table-hover tbody tr:hover {
+    background: #e0e0e0;
+    transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Boutons */
+.btn {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #FF4500; /* Rouge-orangé au lieu de bleu */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #E63900;
+    transform: scale(1.05);
+}
+
+/* ✅ Barre de recherche */
+#searchInput {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+#searchInput:focus {
+    border-color: #FFD700;
+    box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.5);
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
